@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Product Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">E-Commerce</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+      </ul>
+      <div class="cart-container">
+        <div class="cart-icon" id="cart-icon">🛒</div>
+        <div class="cart-dropdown" id="cart-dropdown">
+          <h3>Your Cart</h3>
+          <div class="cart-items" id="cart-items"></div>
+          <div class="cart-total">
+            Total: $<span id="cart-total">0.00</span>
+          </div>
+          <button id="checkout-btn">Checkout</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product-display">
+      <h1>Our Products</h1>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 E-Commerce Product Page</p>
+  </footer>
+
+  <script src="fetch.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
