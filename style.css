@@ -189,10 +189,12 @@ body {
     background-color: #ff6b6b;
     color: #fff;
     border: none;
-    padding: 5px 10px;
+    padding: 2px 4px;  /* Reduced padding even more */
+    font-size: 10px;    /* Smaller font size */
     border-radius: 4px;
     cursor: pointer;
 }
+
 
 .cart-notification {
     position: absolute;
@@ -206,3 +208,18 @@ body {
     font-weight: bold;
 }
 
+.clear-all-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.clear-all-btn:hover {
+    background-color: #d32f2f; /* Darker red */
+}
