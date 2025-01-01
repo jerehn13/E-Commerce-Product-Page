@@ -258,6 +258,43 @@ document.querySelector('.cart-icon').addEventListener('click', () => {
     cartDropdown.classList.toggle('visible'); // Toggle the dropdown visibility
 });
 
+// fixes checkout button to selected currency when clicked button 
+
+function checkout() {
+    const total = cart.reduce(
+        (acc, product) => acc + (convertPrice(product.price, selectedCurrency) * product.quantity),
+        0
+    );
+    if (total > 0) {
+        alert(`Your total is: ${selectedCurrency} ${total.toFixed(2)}`);
+    } else {
+        alert("Your cart is empty.");
+    }
+}
+
+
+// Load saved currency from localStorage or default to USD
+
+async function initializeCurrencyConverter() {
+    // Load saved currency from localStorage or default to USD
+    const savedCurrency = localStorage.getItem('selectedCurrency');
+    selectedCurrency = savedCurrency || 'USD';
+
+    await fetchExchangeRates();
+    updateProductPrices(); // Update prices based on the selected or default currency
+}
+
+// Save currency to localStorage when user changes it
+document.getElementById('currency-dropdown').addEventListener('change', (e) => {
+    selectedCurrency = e.target.value;
+    localStorage.setItem('selectedCurrency', selectedCurrency); // Save selected currency
+    updateProductPrices();
+});
+
+
+
+
+
 
 // Initialize the application
 displayProducts();
