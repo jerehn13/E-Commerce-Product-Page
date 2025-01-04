@@ -292,6 +292,25 @@ document.getElementById('currency-dropdown').addEventListener('change', (e) => {
 });
 
 
+function checkout() {
+    const total = cart.reduce(
+        (acc, product) => acc + (convertPrice(product.price, selectedCurrency) * product.quantity),
+        0
+    );
+
+    if (total > 0) {
+        const itemDetails = cart
+            .map(product => `${product.title} (x${product.quantity})`)
+            .join('\n');
+        
+        alert(`Your total is: ${selectedCurrency} ${total.toFixed(2)}\n\nItems in your cart:\n${itemDetails}`);
+    } else {
+        alert("Your cart is empty.");
+    }
+}
+
+
+
 
 
 
